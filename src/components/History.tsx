@@ -1,8 +1,7 @@
 import React, { FC, useMemo } from "react";
 import { Text, Box, Static } from "ink";
-import { Colors, Message } from "../types";
+import { Message } from "../types";
 import Gradient from "ink-gradient";
-import BigText from "ink-big-text";
 
 type Props = {
 	messages: Message[];
@@ -21,24 +20,24 @@ const History: FC<Props> = ({ messages }) => {
 					<Box key={idx} flexDirection="row" width="100%">
 						{idx === 0 ? (
 							<Gradient name="retro">
-								<BigText text="ChatGPT" font="block" />
+								<Text color="cyanBright">Welcome, NovaEra</Text>
 							</Gradient>
 						) : (
 							<Box
-								borderColor="gray"
+								borderColor="blue"
 								borderStyle="round"
 								alignSelf="flex-end"
 								padding={1}
 								paddingRight={2}
 							>
 								<Box marginRight={1}>
-									<Text>{msg.from === "user" ? "👨" : "🤖"}</Text>
+									<Text>{msg.from === "user" ? "" : ""}</Text>
 								</Box>
 								<Box>
 									{msg.from === "user" ? (
 										<Text color="white">{msg.text}</Text>
 									) : (
-										<Gradient name={Colors.AI_GRADIENT}>
+										<Gradient name="retro">
 											<Text color="white">{msg.text}</Text>
 										</Gradient>
 									)}

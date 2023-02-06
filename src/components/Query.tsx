@@ -12,7 +12,7 @@ const Query: FC<Props> = ({ onSubmit }) => {
 	return (
 		<Box>
 			<Box marginRight={1}>
-				<Text color="gray">[Enter your query]:</Text>
+				<Text color="blue">[Enter your query]:</Text>
 			</Box>
 			<Box>
 				<Text color="white">
